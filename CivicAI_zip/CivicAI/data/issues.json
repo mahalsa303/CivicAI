@@ -1,0 +1,54 @@
+[
+    {
+        "category": "Road Damage",
+        "severity": "High",
+        "priority_score": "92",
+        "department": "Public Works",
+        "impact": "Accident risk",
+        "suggested_action": "Immediate repair",
+        "resolution_time": "2-4 days",
+        "status": "Open",
+        "location": "Near SVEC Main Gate"
+    },
+    {
+        "category": "Water Leakage",
+        "severity": "Medium",
+        "priority_score": "65",
+        "department": "Water Department",
+        "impact": "Water wastage",
+        "suggested_action": "Pipe repair",
+        "resolution_time": "1-2 days",
+        "status": "Resolved",
+        "location": "Hostel Road"
+    },
+    {
+        "category": "Waste Management",
+        "severity": "High",
+        "priority_score": "8",
+        "department": "Municipal Sanitation Department",
+        "impact": "Significant public health risk due to accumulation of garbage attracting pests (rodents, insects) and potential spread of diseases. Environmental degradation from soil and water contamination. Severe visual pollution impacting the aesthetics and livability of the area. Risk to animal health as goats are seen foraging through harmful waste materials.",
+        "suggested_action": "Immediate cleanup and removal of all accumulated waste. Installation of adequate, covered, and easily accessible waste bins/dumpsters. Establishment of a regular and reliable waste collection schedule for the area. Public awareness campaigns on proper waste disposal practices and enforcement against littering.",
+        "resolution_time": "Immediate cleanup within 24-48 hours; systematic improvements and regular collection implemented within 1-2 weeks.",
+        "status": "Open"
+    },
+    {
+        "category": "Waste Management",
+        "severity": "High",
+        "priority_score": "8",
+        "department": "Municipal Sanitation Department",
+        "impact": "Significant public health risk due to accumulation of garbage attracting pests (rodents, insects) and potential spread of diseases. Environmental degradation from soil and water contamination. Severe visual pollution impacting the aesthetics and livability of the area. Risk to animal health as goats are seen foraging through harmful waste materials.",
+        "suggested_action": "Immediate cleanup and removal of all accumulated waste. Installation of adequate, covered, and easily accessible waste bins/dumpsters. Establishment of a regular and reliable waste collection schedule for the area. Public awareness campaigns on proper waste disposal practices and enforcement against littering.",
+        "resolution_time": "Immediate cleanup within 24-48 hours; systematic improvements and regular collection implemented within 1-2 weeks.",
+        "status": "Open"
+    },
+    {
+        "category": "Water Infrastructure Failure",
+        "severity": "High",
+        "priority_score": "9",
+        "department": "Water Department / Public Works Department",
+        "impact": "Significant water wastage, potential for road damage and erosion, reduced water pressure or supply interruption to residents, traffic disruption, and safety hazard due to slippery road conditions.",
+        "suggested_action": "Immediately dispatch an emergency crew to locate and shut off the main water supply to the affected section. Assess the damage and begin repair work without delay. Set up traffic cones and potentially divert traffic if the water flow impacts road safety.",
+        "resolution_time": "6-12 hours for emergency shut-off and initial assessment/temporary fix, 24-48 hours for full repair depending on complexity.",
+        "status": "Open"
+    }
+]

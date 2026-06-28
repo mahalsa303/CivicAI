@@ -1,0 +1,9 @@
+streamlit
+google-generativeai
+python-dotenv
+pillow
+firebase-admin
+folium
+streamlit-folium
+plotly
+pandas
