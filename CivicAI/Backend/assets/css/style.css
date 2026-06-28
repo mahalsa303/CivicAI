@@ -1,0 +1,562 @@
+/* CivicAI Premium SaaS Redesign Stylesheet */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary-color: #6D28D9;
+    --primary-light: #8B5CF6;
+    --primary-dark: #4C1D95;
+    
+    /* Dark Theme (Default) */
+    --body-bg: #0F172A;
+    --card-bg: #111827;
+    --card-border: 1px solid rgba(255, 255, 255, 0.08);
+    --text-main: #FFFFFF;
+    --text-muted: #CBD5E1;
+    --border-color: #1E293B;
+    --sidebar-bg: #0B0F19;
+    --hero-bg: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.65) 100%);
+    
+    /* Shadows */
+    --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+    --card-hover-shadow: 0 16px 32px rgba(109, 40, 217, 0.16);
+    --border-radius: 16px;
+}
+
+/* Light Theme Variable Swaps */
+[data-theme="light"] {
+    --body-bg: #F8FAFC;
+    --card-bg: #FFFFFF;
+    --card-border: 1px solid #E2E8F0;
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    --sidebar-bg: #FFFFFF;
+    --hero-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(241, 245, 249, 0.65) 100%);
+    
+    --card-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+    --card-hover-shadow: 0 12px 25px -4px rgba(109, 40, 217, 0.08);
+}
+
+/* Typography & Layout Reset */
+* {
+    font-family: 'Inter', sans-serif !important;
+}
+
+h1, .section-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 36px !important;
+    font-weight: 700 !important;
+    color: var(--text-main) !important;
+    margin-bottom: 12px !important;
+}
+
+h2, .card-title {
+    font-family: 'Outfit', sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 600 !important;
+    color: var(--text-main) !important;
+}
+
+p, body, .body-text {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: var(--text-muted) !important;
+}
+
+/* Streamlit Container Width Tweaks */
+.block-container {
+    max-width: 95% !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 2rem !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+}
+
+/* Sidebar Custom Styling */
+section[data-testid="stSidebar"] {
+    background-color: var(--sidebar-bg) !important;
+    border-right: 1px solid var(--border-color) !important;
+    padding-top: 20px !important;
+}
+
+section[data-testid="stSidebar"] div.stVerticalBlock {
+    gap: 12px !important;
+}
+
+/* Sidebar Navigation Items */
+div[data-testid="stSidebarNav"] {
+    background-color: transparent !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+}
+
+div[data-testid="stSidebarNav"] ul {
+    gap: 4px !important;
+}
+
+div[data-testid="stSidebarNav"] ul li a {
+    border-radius: 12px !important;
+    padding: 8px 16px !important;
+    margin: 2px 10px !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: var(--text-muted) !important;
+}
+
+div[data-testid="stSidebarNav"] ul li a:hover:not([aria-current="page"]) {
+    background-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+    transform: translateX(4px) !important;
+}
+
+div[data-testid="stSidebarNav"] ul li a[aria-current="page"] {
+    background-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 12px rgba(109, 40, 217, 0.25) !important;
+}
+
+/* Premium Card System */
+.saas-card {
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 16px !important;
+    border: var(--card-border) !important;
+    padding: 24px !important;
+    box-shadow: var(--card-shadow) !important;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease-in-out, border-color 0.25s !important;
+    margin-bottom: 20px !important;
+}
+
+.saas-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow) !important;
+    border-color: var(--primary-light) !important;
+}
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.6) !important;
+}
+[data-theme="dark"] .glass-panel {
+    background: rgba(30, 41, 59, 0.5) !important;
+}
+
+/* Plotly Chart Wrapper Card Styling */
+div[data-testid="stPlotlyChart"] {
+    background: var(--card-bg) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border-radius: 16px !important;
+    border: var(--card-border) !important;
+    padding: 16px !important;
+    box-shadow: var(--card-shadow) !important;
+    margin-bottom: 24px !important;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease-in-out !important;
+}
+
+div[data-testid="stPlotlyChart"]:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow) !important;
+    border-color: var(--primary-light) !important;
+}
+
+/* Navbar Flex Setup via Has Selectors */
+div:has(.logo-anchor) + div + div {
+    align-items: center !important;
+}
+
+/* Custom styled inputs in Navbar */
+div:has(.search-anchor) input {
+    background-color: var(--card-bg) !important;
+    color: var(--text-main) !important;
+    border: var(--card-border) !important;
+    border-radius: 9999px !important;
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+    transition: border-color 0.25s !important;
+    box-shadow: none !important;
+}
+
+div:has(.search-anchor) input:focus {
+    border-color: var(--primary-color) !important;
+}
+
+/* Custom location selectbox */
+div:has(.loc-anchor) div[data-baseweb="select"] {
+    border-radius: 9999px !important;
+    background-color: var(--card-bg) !important;
+    border: var(--card-border) !important;
+}
+
+div:has(.loc-anchor) div[data-baseweb="select"] > div {
+    background-color: transparent !important;
+    border: none !important;
+    color: var(--text-main) !important;
+    font-size: 13.5px !important;
+}
+
+/* Notifications popover button (Bell Icon + Badge) */
+div:has(.notif-anchor) div[data-testid="stPopover"] button {
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 20px !important;
+    padding: 6px !important;
+    position: relative !important;
+    color: var(--text-muted) !important;
+    box-shadow: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background-color 0.2s !important;
+}
+
+div:has(.notif-anchor) div[data-testid="stPopover"] button:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--border-color) !important;
+}
+
+div:has(.notif-anchor) div[data-testid="stPopover"] button::after {
+    content: attr(data-badge);
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background-color: #EF4444;
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 1px 5px;
+    border-radius: 50%;
+    border: 2px solid var(--sidebar-bg);
+}
+
+/* Theme Toggle Button Style */
+div:has(.theme-anchor) button {
+    background-color: transparent !important;
+    border: none !important;
+    font-size: 20px !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: var(--text-muted) !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    transition: background-color 0.2s !important;
+}
+
+div:has(.theme-anchor) button:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--border-color) !important;
+}
+
+/* Profile Popover Button (Initials Avatar) */
+div:has(.profile-anchor) div[data-testid="stPopover"] button {
+    border-radius: 50% !important;
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: 700 !important;
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: 2px solid white !important;
+    box-shadow: 0 2px 8px rgba(109, 40, 217, 0.2) !important;
+    font-size: 14px !important;
+}
+
+div:has(.profile-anchor) div[data-testid="stPopover"] button:hover {
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 12px rgba(109, 40, 217, 0.35) !important;
+}
+
+/* Client-Side Spotlight Carousel */
+.hero-banner-carousel {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    box-shadow: var(--card-shadow);
+}
+
+.slides-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-slide h2 {
+    color: white !important;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.hero-slide p {
+    color: white !important;
+    font-size: 15px;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.carousel-indicators .dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators .dot.active {
+    background-color: white;
+}
+
+/* Premium Hero Columns Container */
+div:has(.premium-hero-anchor) + div[data-testid="stHorizontalBlock"] {
+    background: var(--hero-bg) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border: var(--card-border) !important;
+    border-radius: 16px !important;
+    padding: 30px 40px !important;
+    min-height: 360px !important;
+    margin-bottom: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    box-shadow: var(--card-shadow) !important;
+}
+
+.hero-title {
+    font-size: 60px !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    color: #FFFFFF !important;
+    margin-bottom: 15px !important;
+    margin-top: 0 !important;
+}
+
+.hero-desc {
+    font-size: 16px !important;
+    color: var(--text-muted) !important;
+    margin-bottom: 25px !important;
+    line-height: 1.45 !important;
+}
+
+/* Button style overrides for hero buttons */
+div:has(.premium-hero-anchor) + div[data-testid="stHorizontalBlock"] button {
+    border-radius: 12px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    padding: 10px 24px !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+div:has(.premium-hero-anchor) + div[data-testid="stHorizontalBlock"] div:nth-child(1) button {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+}
+
+div:has(.premium-hero-anchor) + div[data-testid="stHorizontalBlock"] div:nth-child(1) button:hover {
+    background-color: var(--primary-light) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Quick Actions Visual Card blend */
+div:has(.quick-actions-anchor) + div + div[data-testid="stHorizontalBlock"] {
+    background-color: var(--card-bg) !important;
+    border: var(--card-border) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: var(--card-shadow) !important;
+    margin-bottom: 20px !important;
+    transition: transform 0.22s ease-in-out, box-shadow 0.22s ease-in-out !important;
+}
+
+div:has(.quick-actions-anchor) + div + div[data-testid="stHorizontalBlock"]:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow) !important;
+}
+
+/* Issue Card button blending */
+div:has(> div > .saas-card) + div[data-testid="stHorizontalBlock"] button {
+    margin-top: -30px !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-left-radius: 16px !important;
+    border-bottom-right-radius: 16px !important;
+    background-color: var(--card-bg) !important;
+    color: var(--text-main) !important;
+    border: var(--card-border) !important;
+    border-top: none !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 10px !important;
+    transition: all 0.2s !important;
+}
+
+div:has(> div > .saas-card) + div[data-testid="stHorizontalBlock"] button:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--border-color) !important;
+}
+
+/* Badges styling */
+.badge-high {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    color: #EF4444 !important;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-medium {
+    background-color: rgba(245, 158, 11, 0.15) !important;
+    color: #F59E0B !important;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.badge-low {
+    background-color: rgba(16, 185, 129, 0.15) !important;
+    color: #10B981 !important;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Skeleton loader animations */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+.skeleton-box {
+    animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    background-color: var(--border-color) !important;
+    border-radius: 8px;
+}
+
+.skeleton-title {
+    height: 24px;
+    width: 60%;
+    margin-bottom: 12px;
+}
+
+.skeleton-line {
+    height: 16px;
+    width: 90%;
+    margin-bottom: 8px;
+}
+
+.skeleton-button {
+    height: 38px;
+    width: 120px;
+    border-radius: 8px;
+}
+
+/* Sidebar Selectboxes and Filters Styling */
+section[data-testid="stSidebar"] div[data-baseweb="select"] {
+    border-radius: 8px !important;
+    background-color: var(--sidebar-bg) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+section[data-testid="stSidebar"] div[data-baseweb="select"] > div {
+    color: var(--text-main) !important;
+    font-size: 13.5px !important;
+}
+
+section[data-testid="stSidebar"] hr {
+    border-color: var(--border-color) !important;
+    margin: 15px 0 !important;
+}
+
+/* Global inputs compatibility */
+input, select, textarea {
+    background-color: var(--card-bg) !important;
+    color: var(--text-main) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Floating animation for Smart City illustration icons */
+@keyframes float-slow {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-12px) rotate(4deg);
+    }
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 24px;
+    animation: float-slow 4s ease-in-out infinite;
+    z-index: 5;
+    pointer-events: none;
+    user-select: none;
+}
+
+.icon-road { top: 15%; right: 12%; animation-delay: 0s; }
+.icon-tree { top: 48%; right: 6%; animation-delay: 0.8s; }
+.icon-lamp { top: 72%; right: 18%; animation-delay: 1.5s; }
+.icon-building { top: 22%; right: 30%; animation-delay: 2.2s; }
+.icon-water { top: 58%; right: 34%; animation-delay: 0.4s; }
+.icon-ai { top: 12%; right: 22%; animation-delay: 1.2s; }
+
+/* Active Menu indicator glowing */
+div[data-testid="stSidebarNav"] ul li a[aria-current="page"] {
+    box-shadow: 0 4px 18px rgba(109, 40, 217, 0.4) !important;
+}
+
+
